@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="org.adlotto.cordova.status-bar"
+      version="0.1.0">
+    <name>StatusBar</name>
+
+    <js-module src="www/status_bar.js" name="StatusBar">
+        <clobbers target="cordova.statusBar" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="StatusBar">
+                <param name="ios-package" value="ALStatusBar"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/ALStatusBar.h" />
+        <source-file src="src/ios/ALStatusBar.m" />
+    </platform>
+</plugin>
